@@ -1,0 +1,14 @@
+{
+  "name": "labmaster-client",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "firebase": "^9.9.2"
+  }
+}
