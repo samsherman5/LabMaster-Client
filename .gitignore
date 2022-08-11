@@ -310,6 +310,8 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+data/
+
 # Windows shortcuts
 *.lnk
 

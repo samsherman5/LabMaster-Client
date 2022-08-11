@@ -1,11 +1,19 @@
 const alert = require('alert');
 
-const options = {
+const platform = {
 	"linux": "dialog",
 	"darwin": "osascript",
-	"win32": "msg"
+	"win32": "cscript"
 };
 
-exports.create_window = async function create_window(text, tcolor, fullscreen, bcolor) {
-	alert(text, options[process.platform]);
+exports.create_alert_window = async function create_window(text) {
+	alert(text, platform[process.platform]);
 };
+
+exports.run_batch = async function run_batch(){
+
+};
+
+exports.black_screen = function black_screen(){
+	//TODO: not implemented
+}
