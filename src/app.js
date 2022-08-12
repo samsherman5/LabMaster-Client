@@ -38,13 +38,17 @@ const setup = async () => {
 			});
 	}
 
-	const CLIENTID = fs.readFileSync(`${DATAPATH}/id.file`, err => {
+	const CLIENT_ID = fs.readFileSync(`${DATAPATH}/id.file`, err => {
 		console.error(err);
 	});
 
+	let CURRENT_COMMANDS = [];
+
 	while(true){
-		await instance.get('/ping', {headers: {id: CLIENTID}}).then(() => {
-			console.log("Pinged server.")
+		await instance.get('/ping', {headers: {id: CLIENT_ID}}).then(result => {
+			console.log("Pinged server.");
+			CURRENT_COMMANDS = result.data.commandsResult.commands;
+			console.log(CURRENT_COMMANDS);
 		});
 		await sleep(20000);
 	}
